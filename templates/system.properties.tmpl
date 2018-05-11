@@ -1,0 +1,32 @@
+# device inform
+unifi.http.port=8080
+# controller UI / API
+unifi.https.port=9443
+# portal redirect port for HTTP
+portal.http.port=8880
+# portal redirect port for HTTPs
+portal.https.port=8843
+# UDP port used for STUN
+unifi.stun.port=3478
+
+# the IP devices should be talking to for inform
+system_ip={{ getenv "SYSTEM_IP" }}
+
+# Ports reserved for device redirector. There is no need to open
+# firewall for these ports on controller, however do NOT set
+# controller to use these ports.
+#
+portal.redirector.port=8881
+portal.redirector.port.wired=8882
+#
+# Port used for throughput measurement.
+unifi.throughput.port=6789
+
+is_default=false
+
+db.mongo.local=false
+db.mongo.uri=mongodb://{{ getenv "MONGO_USERNAME" }}:{{ getenv "MONGO_PASSWORD" }}@{{ getenv "MONGO_HOST" }}:{{ getenv "MONGO_PORT" }}/{{ getenv "UNIFI_DB" }}
+statdb.mongo.uri={{ getenv "MONGO_USERNAME" }}:{{ getenv "MONGO_PASSWORD" }}@{{ getenv "MONGO_HOST" }}:{{ getenv "MONGO_PORT" }}/{{ getenv "UNIFI_DB" }}_stat
+unifi.db.name={{ getenv "UNIFI_DB" }}
+
+unifi.logStdout=True
