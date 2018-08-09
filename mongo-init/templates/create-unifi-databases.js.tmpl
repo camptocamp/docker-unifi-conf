@@ -1,0 +1,2 @@
+db.getSiblingDB('{{ getenv "UNIFI_DB" }}').createUser({user:"{{ getenv "MONGO_USERNAME" }}", pwd:"{{ getenv "MONGO_PASSWORD" }}", roles: [{role: "dbOwner", db:"{{ getenv "UNIFI_DB" }}"}]})
+db.getSiblingDB('{{ getenv "UNIFI_DB" }}_stat').createUser({user:"{{ getenv "MONGO_USERNAME" }}", pwd:"{{ getenv "MONGO_PASSWORD" }}", roles: [{role: "dbOwner", db:"{{ getenv "UNIFI_DB" }}_stat"}]})

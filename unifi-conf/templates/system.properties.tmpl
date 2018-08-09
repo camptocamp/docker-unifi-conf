@@ -10,7 +10,7 @@ portal.https.port=8843
 unifi.stun.port=3478
 
 # the IP devices should be talking to for inform
-system_ip={{ getenv "SYSTEM_IP" }}
+system_ip={{getenv "SYSTEM_IP"}}
 
 # Ports reserved for device redirector. There is no need to open
 # firewall for these ports on controller, however do NOT set
@@ -25,8 +25,8 @@ unifi.throughput.port=6789
 is_default=false
 
 db.mongo.local=false
-db.mongo.uri=mongodb://{{ getenv "MONGO_USERNAME" }}:{{ getenv "MONGO_PASSWORD" }}@{{ getenv "MONGO_HOST" }}:{{ getenv "MONGO_PORT" }}/{{ getenv "UNIFI_DB" }}
-statdb.mongo.uri={{ getenv "MONGO_USERNAME" }}:{{ getenv "MONGO_PASSWORD" }}@{{ getenv "MONGO_HOST" }}:{{ getenv "MONGO_PORT" }}/{{ getenv "UNIFI_DB" }}_stat
+db.mongo.uri=mongodb://{{ getenv "MONGO_USERNAME" }}:{{ getenv "MONGO_PASSWORD" }}@mongodb:27017/{{ getenv "UNIFI_DB" }}
+statdb.mongo.uri=mongodb://{{ getenv "MONGO_USERNAME" }}:{{ getenv "MONGO_PASSWORD" }}@mongodb:27017/{{ getenv "UNIFI_DB" }}_stat
 unifi.db.name={{ getenv "UNIFI_DB" }}
 
 unifi.logStdout=True
